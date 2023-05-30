@@ -57,7 +57,7 @@ public class Bluck{
             p.execute("KMP");
             c.write(input);
 
-            System.out.println("Waiting for result .. ");
+            System.out.println("Searching... ");
 
             Result result = (Result) (c.readObject());
             List<Integer> ins = result.getRes();
