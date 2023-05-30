@@ -6,18 +6,15 @@ import java.util.List;
 public class KMP implements AM {
 
 
-    // A pattern searching function that uses Bad Character Heuristic of Boyer Moore Algorithm
     public Result search(String text, String pattern) {
         Result result = new Result();
 
-        // Base Case 1: Y is null or empty
         if (pattern == null || pattern.length() == 0)
         {
-            System.out.println("Pattern occurs with shift 0");
+            System.out.println("Pattern occurs with zero shift");
             return result;
         }
 
-        // Base Case 2: X is null or X's length is less than that of Y's
         if (text == null || pattern.length() > text.length())
         {
             System.out.println("Pattern not found");
@@ -26,7 +23,6 @@ public class KMP implements AM {
 
         char[] chars = pattern.toCharArray();
 
-        // next[i] stores the index of next best partial match
         int[] next = new int[pattern.length() + 1];
         for (int i = 1; i < pattern.length(); i++)
         {
@@ -53,7 +49,7 @@ public class KMP implements AM {
             else if (j > 0)
             {
                 j = next[j];
-                i--;	// since i will be incremented in next iteration
+                i--;
             }
         }
 
