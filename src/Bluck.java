@@ -41,7 +41,7 @@ public class Bluck{
 
         List<point> points = new ArrayList<>();
         List<channel> channels = new ArrayList<>();
-
+        int total = 0;
         for (int i = 0; i < texts.size(); i++) {
             String t = texts.get(i);
             Integer shift = shifts.get(i);
@@ -57,11 +57,12 @@ public class Bluck{
             p.execute("KMP");
             c.write(input);
 
-            System.out.println("Searching... ");
+            //System.out.println("Searching... ");
 
             Result result = (Result) (c.readObject());
             List<Integer> ins = result.getRes();
-            System.out.println(ins.size());
+            total = total + ins.size();
+            //System.out.println(ins.size());
             //if (ins.size() > 0) {
             //    System.out.println("Pattern ins : {");
             //    for (int index : ins) {
@@ -71,7 +72,7 @@ public class Bluck{
             //}
         }
 
-
+        System.out.println(total);
         curtask.end();
     }
     public static String textFromFile(String filename) throws Exception {
