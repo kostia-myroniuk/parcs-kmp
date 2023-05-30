@@ -61,13 +61,14 @@ public class Bluck{
 
             Result result = (Result) (c.readObject());
             List<Integer> ins = result.getRes();
-            if (ins.size() > 0) {
-                System.out.println("Pattern ins : {");
-                for (int index : ins) {
-                    System.out.print(shift + index + " ");
-                }
-                System.out.println("}");
-            }
+            System.out.println(ins.size());
+            //if (ins.size() > 0) {
+            //    System.out.println("Pattern ins : {");
+            //    for (int index : ins) {
+            //        System.out.print(shift + index + " ");
+            //    }
+            //    System.out.println("}");
+            //}
         }
 
 
